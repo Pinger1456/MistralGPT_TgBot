@@ -14,7 +14,7 @@ def get_mistral_response(user_message: str) -> str:
     }
     data = {
         "model": "mistral-small",
-        "messages": [{"role": "user", "content": f"Ответь на русском языке, избегая использования английских слов и фраз: {user_message}"}],
+        "messages": [{"role": "user", "content": f"Преимущественно отвечай на русском, если того требует контекст: {user_message}"}],
         "max_tokens": 32000,
         "temperature": 0.7
     }
