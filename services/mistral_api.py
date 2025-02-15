@@ -15,7 +15,7 @@ def get_mistral_response(user_message: str) -> str:
     data = {
         "model": "mistral-small",
         "messages": [{"role": "user", "content": f"Ответь на русском языке, избегая использования английских слов и фраз: {user_message}"}],
-        "max_tokens": 1000,
+        "max_tokens": 32000,
         "temperature": 0.7
     }
     response = requests.post(MISTRAL_API_URL, headers=headers, json=data)
