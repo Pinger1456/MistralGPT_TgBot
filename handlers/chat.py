@@ -7,7 +7,7 @@ async def chat(update: Update, context) -> None:
 
     try:
         # Добавляем указание языка
-        prompt = f"Отвечай на русском, но где необходимо используй другие языки: {user_message}"
+        prompt = f"{user_message}"
         
         # Запрос к API
         bot_response = get_mistral_response(prompt)
