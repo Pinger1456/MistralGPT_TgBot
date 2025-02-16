@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from telegram.ext import Application
-from handlers import start, chat, weather, voice, admin
+from handlers import start, help, chat, image, weather, voice, admin
 from utils.logging import setup_logging
 
 # Загрузка переменных окружения
@@ -18,10 +18,11 @@ def main() -> None:
     # Регистрация обработчиков
     application.add_handler(start.handler)
     application.add_handler(chat.handler)
+    application.add_handler(help.handler)
     application.add_handler(weather.handler)
     application.add_handler(voice.handler)
     application.add_handler(admin.handler)
-
+    application.add_handler(image.handler)
     # Запуск бота
     application.run_polling()
 
